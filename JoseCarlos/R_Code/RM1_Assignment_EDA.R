@@ -6,7 +6,7 @@
 #########################################################################
 
 #Reading the data into R
-sorting.dat <- read.csv(file = "expDB.dat")
+sorting.dat <- read.csv(file = "D:/GitHub/RM1_UC/JoseCarlos/R_Code/expDB.dat")
 # sorting.dat[, 18] <- as.factor(scp.dat[, 18])
 # levels(scp.dat[, 18]) <- c("Coal", "Oil")
 
@@ -42,7 +42,7 @@ hist(sorting.dat$Lgest_SubArray,
      xlab= "Lgest_SubArray", 
      border="blue", 
      col="green",
-     xlim=c(100,700),
+     xlim=c(100,70000),
      las=1, 
      breaks=5,
      prob = FALSE)
@@ -57,7 +57,7 @@ truehist(sorting.dat$Lgest_SubArray, nbins = "scott", col = "grey", main = "Scot
 # par(oldpar)
 # rm(oldpar)
 
-
+##### CATEGORIZAR POR TIPO DE ALGORITMO DE ORDENAÇÃO
 ##############
 #Boxplots
 boxplot(sorting.dat$Lgest_SubArray, notch = TRUE, col = "grey", ylab = "Lgest_SubArray", main = "Boxplot of Lgest_SubArray", boxwex = 0.5)
@@ -84,6 +84,7 @@ plot(x = sorting.dat$Probability_Failure, y = sorting.dat$Lgest_SubArray, main =
 lines(lowess(x = sorting.dat$Probability_Failure, y = sorting.dat$Lgest_SubArray), col = "red", lwd = 1)
 
 #############
+#### AJUSTAR RANGE X
 #Scatter plot matrices
 ArrSz <- sorting.dat$Array_Size
 EPS <- sorting.dat$Probability_Failure
@@ -171,4 +172,5 @@ lines(lowess(x = NrShfVl[SortTy == "Quick_Sort"], y = EPS[SortTy == "Quick_Sort"
 lines(lowess(x = NrShfVl[SortTy == "Insertion_Sort"], y = EPS[SortTy == "Insertion_Sort"]), col = "green", lwd = 1)
 lines(lowess(x = NrShfVl[SortTy == "Merge_Sort"], y = EPS[SortTy == "Merge_Sort"]), col = "yellow", lwd = 1)
 legend("topleft", legend = c("Bubble_Sort", "Quick_Sort", "Insertion_Sort", "Merge_Sort" ), col = c("red","blue","green","yellow"), pch = c(21, 3))
+
 
