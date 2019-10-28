@@ -1,4 +1,7 @@
 // Adapted from Rosetta Code.
+//Adapted to attend Work Assignment for discipline
+//PDCTI - RM1 2019/2020 - Universidade de Coimbra
+//by José Carlos Almeida and Afonso Neto
  
 #include <stdlib.h>     
 #include <stdio.h>
@@ -56,6 +59,55 @@ void insertion_sort(int *a, int n) {
 		a[j] = tmp;
 	}
 }
+
+//Rounding a float
+float myRound(float var) 
+{ 
+    // we use array of chars to store number 
+    // as a string. 
+    char str[40];  
+  
+    // Print in string the value of var  
+    // with two decimal point 
+    sprintf(str, "%.6f", var); 
+  
+    // scan string value in var  
+    sscanf(str, "%f", &var);  
+  
+    return var;  
+} 
+
+//Read customized input file
+FILE* readCustomizedInputFile(char* n, char* eps, char* maxr){
+     
+     FILE *pFile;
+     char inFileName[50];
+
+    //Names definition for input files:
+    //"data_"+ n + "_"+eps"_"maxr+"_"+nome_funcao+".in"
+    //Exemplo: data_1000_0.01_50_Randint.in
+    //Create file name
+    strcpy(inFileName, "data_");
+    strcat(inFileName, n);
+    strcat(inFileName, "_");
+    strcat(inFileName, eps);
+    strcat(inFileName, "_");
+    strcat(inFileName, maxr);
+    strcat(inFileName, "_Randint.in");
+
+    printf(inFileName);
+
+    //Open the file
+    pFile = fopen(inFileName, "r");
+
+    if(pFile==NULL){
+        printf ("Could not open the input file.\n");
+        return NULL;
+    }
+ 
+    return pFile;
+}
+
 
 //Store experimental results into database
 int store_data( char* data){
@@ -152,49 +204,107 @@ int calcQtdDesloc(int* A, int* B, int n){
 int main() {
 
         int n, i;
-
+        
+        //JC
+        int my_n, my_maxr;
+        float my_eps, temp_eps;
+                
         //Get the experimental data to store: Bubblesort algorithm (1), size of array (n), fault probability (eps),
         //the largest sorted subarray (count) 
         char* dataTostore;
         const char sort_algorithm[15] = "Insertion_Sort";
 
-        scanf("%lf",&eps);
-        scanf("%d",&n);
+        //Customized input file
+        FILE* pcustomInFile;
+        FILE* pdataOutFile;
 
+        //Read input file name components
+        printf("Enter n: ");
+        scanf("%d", &my_n);
+        printf("Enter eps: ");
+        scanf("%f", &my_eps);
+        printf("Enter maxr: ");
+        scanf("%d", &my_maxr);
+
+        //Format my_eps (0.0000)
+        temp_eps = myRound(my_eps);
+                
+         
+        //Read custimized Input file
+        pcustomInFile = readCustomizedInputFile(integer_to_string(my_n), double_to_string(temp_eps), 
+                                                integer_to_string(my_maxr));
+        
+        //Commented by JC
+        //scanf("%lf",&eps);
+        //scanf("%d",&n);
+
+        //Now read from input file - JC
+        if (pcustomInFile != NULL){
+
+            fscanf(pcustomInFile,"%lf",&eps);
+            fscanf(pcustomInFile,"%d",&n); 
+             
+             for (i=0; i < n; i++) 
+                fscanf(pcustomInFile,"%d",&A[i]);
+                srand((unsigned) time(NULL));
+                memcpy(B, A, sizeof(A));
+        }else{
+             printf ("Houve um erro ao abrir o arquivo de input.\n");
+             return 0;
+        }
+
+        //Commented by JC
+        /*
         for (i=0; i < n; i++) 
                 scanf("%d",&A[i]);
         srand((unsigned) time(NULL));
-	memcpy(B, A, sizeof(A));
-       
-	printf("%d",A[0]);
-        for (i=1; i<n;i++)
-                printf(" %d", A[i]);
-        printf("\n");
+        memcpy(B, A, sizeof(A)); */
 
+        //Open output file
+        pdataOutFile = fopen("data.out", "w");
 
-        insertion_sort(A,n);
+        if(pdataOutFile!=NULL){
+            fprintf(pdataOutFile,"%d",A[0]);
+            for (i=1; i<n;i++)
+                fprintf(pdataOutFile," %d", A[i]);
+            fprintf(pdataOutFile, "\n");
 
+        }else{
+
+            printf ("Houve um erro ao abrir o arquivo de output.\n");
+            return 0;
+        }
+        
+        //Commented by JC
+        /*
         printf("%d",A[0]);
         for (i=1; i<n;i++)
                 printf(" %d", A[i]);
-        printf("\n");
-       	int count = LNDS(n);
-        
-        //Armazena o valor da probabilidade de MF para armazenamento em database       
-        eps_1 = eps; 
-	    eps = -1.0;
+        printf("\n");*/
 
-        insertion_sort(B,n);
+        insertion_sort(A,n);
 
-        printf("%d",B[0]);
+        fprintf(pdataOutFile,"%d",A[0]);
         for (i=1; i<n;i++)
-                printf(" %d", B[i]);
-        printf("\n%d\n",count);
+                fprintf(pdataOutFile," %d", A[i]);
+        fprintf(pdataOutFile, "\n");
+
+        int count = LNDS(n);
+
+        //Armazena o valor da probabilidade de MF para armazenamento em database       
+        eps_1 = eps;        
+        eps = -1.0;     
+        insertion_sort(B,n);
+        
+        fprintf(pdataOutFile,"%d",B[0]);
+            for (i=1; i<n;i++)
+                fprintf(pdataOutFile, " %d", B[i]);
+        fprintf(pdataOutFile, "\n%d\n", count);
 
         //Calcula a quantidade de deslocamentos no Array com memory faults
         qtd_desloc = calcQtdDesloc(A,B,n);
 
-         //Prepare experimental data to store in Database
+        //Prepare experimental data to store in Database
         //Populate data to store - dataTostore  
         dataTostore = concat(sort_algorithm, integer_to_string(n), double_to_string(eps_1), 
                                 integer_to_string(count), integer_to_string(qtd_desloc));
@@ -203,8 +313,13 @@ int main() {
         if (dataTostore != NULL){
             store_data(dataTostore);
         }
-     
-    return 0;
+
+        //*************************************** 
+        //Não esquecer de fechar os arquivos
+        fclose(pcustomInFile);
+        fclose(pdataOutFile);
+
+	return 0;
 }
 
 
