@@ -216,65 +216,52 @@ int calcQtdDesloc(int* A, int* B, int n){
 
 int main() {
 
-        int n, i;
+    int n, i;
         
-        //JC
-        int my_n, my_maxr;
-        float my_eps, temp_eps;
+    //JC
+    const int nr_files = 101;
+    float my_eps, temp_eps;
+    FILE *pFile;
+    char inFileName[50];
                 
-        //Get the experimental data to store: Bubblesort algorithm (1), size of array (n), fault probability (eps),
-        //the largest sorted subarray (count) 
-        char* dataTostore;
-        const char sort_algorithm[12] = "Merge_Sort";
+    //Get the experimental data to store: Bubblesort algorithm (1), size of array (n), fault probability (eps),
+    //the largest sorted subarray (count) 
+    char* dataTostore;
+    const char sort_algorithm[12] = "Merge_Sort";
 
-        //Customized input file
-        FILE* pcustomInFile;
-        FILE* pdataOutFile;
+    //Output file
+    FILE* pdataOutFile;
 
-        //Read input file name components
-        printf("Enter n: ");
-        scanf("%d", &my_n);
-        printf("Enter eps: ");
-        scanf("%f", &my_eps);
-        printf("Enter maxr: ");
-        scanf("%d", &my_maxr);
+    //Open output file
+    pdataOutFile = fopen("data.out", "w");
 
-        //Format my_eps (0.0000)
-        temp_eps = myRound(my_eps);
-                
-         
-        //Read custimized Input file
-        pcustomInFile = readCustomizedInputFile(integer_to_string(my_n), double_to_string(temp_eps), 
-                                                integer_to_string(my_maxr));
-        
-        //Commented by JC
-        //scanf("%lf",&eps);
-        //scanf("%d",&n);
+    //Read customized input files
+    for(int j=1; j<nr_files; j++){
+     
+        //Names definition for input files:
+        //1_data.in, 2_data.in, n_data.in
 
-        //Now read from input file - JC
-        if (pcustomInFile != NULL){
+        //Create file name
+        strcpy(inFileName, integer_to_string(j));
+        strcat(inFileName, "_data.in");
+     
+       //Open the file
+        pFile = fopen(inFileName, "r");
 
-            fscanf(pcustomInFile,"%lf",&eps);
-            fscanf(pcustomInFile,"%d",&n); 
-             
-             for (i=0; i < n; i++) 
-                fscanf(pcustomInFile,"%d",&A[i]);
-                srand((unsigned) time(NULL));
-                memcpy(B, A, sizeof(A));
-        }else{
-             printf ("Houve um erro ao abrir o arquivo de input.\n");
-             return 0;
+        if(pFile==NULL){
+            printf ("Could not open the input file.\n");
+            return 0;
         }
-
-        //Commented by JC
-        /*
+ 
+        fscanf(pFile,"%lf",&eps);
+        fscanf(pFile,"%d",&n); 
+             
         for (i=0; i < n; i++) 
-                scanf("%d",&A[i]);
+            fscanf(pFile,"%d",&A[i]);
         srand((unsigned) time(NULL));
-        memcpy(B, A, sizeof(A)); */
+        memcpy(B, A, sizeof(A));
 
-        //Open output file
-        pdataOutFile = fopen("data.out", "w");
+        
 
         if(pdataOutFile!=NULL){
             fprintf(pdataOutFile,"%d",A[0]);
@@ -287,15 +274,8 @@ int main() {
             printf ("Houve um erro ao abrir o arquivo de output.\n");
             return 0;
         }
-        
-        //Commented by JC
-        /*
-        printf("%d",A[0]);
-        for (i=1; i<n;i++)
-                printf(" %d", A[i]);
-        printf("\n");*/
 
-       merge_sort(A,n);
+        merge_sort(A,n);
 
         fprintf(pdataOutFile,"%d",A[0]);
         for (i=1; i<n;i++)
@@ -327,10 +307,23 @@ int main() {
             store_data(dataTostore);
         }
 
-        //*************************************** 
+        pFile = NULL;
+        
+        //***************************************
         //Não esquecer de fechar os arquivos
-        fclose(pcustomInFile);
-        fclose(pdataOutFile);
+        fclose(pFile);
+        
+        //Nome do arquivo
+        printf("%s\n", inFileName);
+        strcpy(inFileName, "");
+        
+        
+    }
+
+     
+    //***************************************
+    //Não esquecer de fechar os arquivos
+    fclose(pdataOutFile);
 
 	return 0;
 }
