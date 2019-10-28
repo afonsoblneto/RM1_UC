@@ -228,20 +228,22 @@ int main() {
     //Output file
     FILE* pdataOutFile;
 
+    //Open output file
+    pdataOutFile = fopen("data.out", "w");
+
     //Read customized input files
-    for(int i=1; i<nr_files; i++){
+    for(int j=1; j<nr_files; j++){
      
         //Names definition for input files:
         //1_data.in, 2_data.in, n_data.in
 
         //Create file name
-        strcpy(inFileName, integer_to_string(i));
+        strcpy(inFileName, integer_to_string(j));
         strcat(inFileName, "_data.in");
-        
-        //Nome do arquivo
-        printf(inFileName);
 
-        //Open the file
+        printf(inFileName);
+        
+       //Open the file
         pFile = fopen(inFileName, "r");
 
         if(pFile==NULL){
@@ -257,8 +259,7 @@ int main() {
         srand((unsigned) time(NULL));
         memcpy(B, A, sizeof(A));
 
-        //Open output file
-        pdataOutFile = fopen("data.out", "w");
+        
 
         if(pdataOutFile!=NULL){
             fprintf(pdataOutFile,"%d",A[0]);
@@ -303,11 +304,23 @@ int main() {
         if (dataTostore != NULL){
             store_data(dataTostore);
         }
+
+        pFile = NULL;
+        
+        //***************************************
+        //Não esquecer de fechar os arquivos
+        fclose(pFile);
+        
+        //Nome do arquivo
+        printf(inFileName);
+        strcpy(inFileName, "");
+        //printf(inFileName);
+        
     }
 
-    //*************************************** 
+     
+    //***************************************
     //Não esquecer de fechar os arquivos
-    fclose(pFile);
     fclose(pdataOutFile);
 
 	return 0;
