@@ -214,7 +214,6 @@ int main() {
     int n, i;
         
     //JC
-    int my_n, my_maxr;
     const int nr_files = 101;
     float my_eps, temp_eps;
     FILE *pFile;
@@ -240,9 +239,7 @@ int main() {
         //Create file name
         strcpy(inFileName, integer_to_string(j));
         strcat(inFileName, "_data.in");
-
-        printf(inFileName);
-        
+     
        //Open the file
         pFile = fopen(inFileName, "r");
 
@@ -312,9 +309,9 @@ int main() {
         fclose(pFile);
         
         //Nome do arquivo
-        printf(inFileName);
+        printf("%s\n", inFileName);
         strcpy(inFileName, "");
-        //printf(inFileName);
+        
         
     }
 
