@@ -211,62 +211,51 @@ int calcQtdDesloc(int* A, int* B, int n){
 
 int main() {
 
-        int n, i;
+    int n, i;
         
-        //JC
-        int my_n, my_maxr;
-        float my_eps, temp_eps;
+    //JC
+    int my_n, my_maxr;
+    const int nr_files = 101;
+    float my_eps, temp_eps;
+    FILE *pFile;
+    char inFileName[50];
                 
-        //Get the experimental data to store: Bubblesort algorithm (1), size of array (n), fault probability (eps),
-        //the largest sorted subarray (count) 
-        char* dataTostore;
-        const char sort_algorithm[12] = "Bubble_Sort";
+    //Get the experimental data to store: Bubblesort algorithm (1), size of array (n), fault probability (eps),
+    //the largest sorted subarray (count) 
+    char* dataTostore;
+    const char sort_algorithm[12] = "Bubble_Sort";
 
-        //Customized input file
-        FILE* pcustomInFile;
-        FILE* pdataOutFile;
+    //Output file
+    FILE* pdataOutFile;
 
-        //Read input file name components
-        printf("Enter n: ");
-        scanf("%d", &my_n);
-        printf("Enter eps: ");
-        scanf("%f", &my_eps);
-        printf("Enter maxr: ");
-        scanf("%d", &my_maxr);
+    //Read customized input files
+    for(int i=1; i<nr_files; i++){
+     
+        //Names definition for input files:
+        //1_data.in, 2_data.in, n_data.in
 
-        //Format my_eps (0.0000)
-        temp_eps = myRound(my_eps);
-                
-         
-        //Read custimized Input file
-        pcustomInFile = readCustomizedInputFile(integer_to_string(my_n), double_to_string(temp_eps), 
-                                                integer_to_string(my_maxr));
+        //Create file name
+        strcpy(inFileName, integer_to_string(i));
+        strcat(inFileName, "_data.in");
         
-        //Commented by JC
-        //scanf("%lf",&eps);
-        //scanf("%d",&n);
+        //Nome do arquivo
+        printf(inFileName);
 
-        //Now read from input file - JC
-        if (pcustomInFile != NULL){
+        //Open the file
+        pFile = fopen(inFileName, "r");
 
-            fscanf(pcustomInFile,"%lf",&eps);
-            fscanf(pcustomInFile,"%d",&n); 
-             
-             for (i=0; i < n; i++) 
-                fscanf(pcustomInFile,"%d",&A[i]);
-                srand((unsigned) time(NULL));
-                memcpy(B, A, sizeof(A));
-        }else{
-             printf ("Houve um erro ao abrir o arquivo de input.\n");
-             return 0;
+        if(pFile==NULL){
+            printf ("Could not open the input file.\n");
+            return 0;
         }
-
-        //Commented by JC
-        /*
+ 
+        fscanf(pFile,"%lf",&eps);
+        fscanf(pFile,"%d",&n); 
+             
         for (i=0; i < n; i++) 
-                scanf("%d",&A[i]);
+            fscanf(pFile,"%d",&A[i]);
         srand((unsigned) time(NULL));
-        memcpy(B, A, sizeof(A)); */
+        memcpy(B, A, sizeof(A));
 
         //Open output file
         pdataOutFile = fopen("data.out", "w");
@@ -282,13 +271,6 @@ int main() {
             printf ("Houve um erro ao abrir o arquivo de output.\n");
             return 0;
         }
-        
-        //Commented by JC
-        /*
-        printf("%d",A[0]);
-        for (i=1; i<n;i++)
-                printf(" %d", A[i]);
-        printf("\n");*/
 
         bubble_sort(A,n);
 
@@ -321,12 +303,16 @@ int main() {
         if (dataTostore != NULL){
             store_data(dataTostore);
         }
+    }
 
-        //*************************************** 
-        //Não esquecer de fechar os arquivos
-        fclose(pcustomInFile);
-        fclose(pdataOutFile);
+    //*************************************** 
+    //Não esquecer de fechar os arquivos
+    fclose(pFile);
+    fclose(pdataOutFile);
 
 	return 0;
+
 }
+
+                       
 
