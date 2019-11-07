@@ -2,7 +2,7 @@
 expDB <- read.csv("D:/GitHub/RM1_UC/JoseCarlos/Python_Code/expDB.dat", header=FALSE)
 
 # Naming columns
-colnames(expDB) <- c("Sort_Method", "Sample_Size", "Prob_Fail", "Size_Larg_Sort_Array", "Num_Switches")
+colnames(expDB) <- c("Sort_Method", "Sample_Size", "Prob_Fail", "Size_Larg_Sort_Array", "Num_Shifts")
 
 # Changing the col "Sort_Method" to categorical
 expDB[, 1] <- as.factor(expDB[, 1])
@@ -61,10 +61,10 @@ show_data("Prob_Fail", "5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
 show_data("Prob_Fail", "10%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
 show_data("Prob_Fail", "15%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
 
-show_data("Prob_Fail", "1%", "Sort_Method","Num_Switches","Sample_Size")
-show_data("Prob_Fail", "5%", "Sort_Method","Num_Switches","Sample_Size")
-show_data("Prob_Fail", "10%", "Sort_Method","Num_Switches","Sample_Size")
-show_data("Prob_Fail", "15%", "Sort_Method","Num_Switches","Sample_Size")
+show_data("Prob_Fail", "1%", "Sort_Method","Num_Shifts","Sample_Size")
+show_data("Prob_Fail", "5%", "Sort_Method","Num_Shifts","Sample_Size")
+show_data("Prob_Fail", "10%", "Sort_Method","Num_Shifts","Sample_Size")
+show_data("Prob_Fail", "15%", "Sort_Method","Num_Shifts","Sample_Size")
 
 show_data("Sample_Size", 100, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
 show_data("Sample_Size", 1000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
@@ -73,12 +73,12 @@ show_data("Sample_Size", 10000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail"
 show_data("Sample_Size", 50000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
 show_data("Sample_Size", 100000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
 
-show_data("Sample_Size", 100, "Sort_Method","Num_Switches","Prob_Fail")
-show_data("Sample_Size", 1000, "Sort_Method","Num_Switches","Prob_Fail")
-show_data("Sample_Size", 5000, "Sort_Method","Num_Switches","Prob_Fail")
-show_data("Sample_Size", 10000, "Sort_Method","Num_Switches","Prob_Fail")
-show_data("Sample_Size", 50000, "Sort_Method","Num_Switches","Prob_Fail")
-show_data("Sample_Size", 100000, "Sort_Method","Num_Switches","Prob_Fail")
+show_data("Sample_Size", 100, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sample_Size", 1000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sample_Size", 5000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sample_Size", 10000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sample_Size", 50000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sample_Size", 100000, "Sort_Method","Num_Shifts","Prob_Fail")
 
 #### TO DO #####
 # # List simple summary statistics
