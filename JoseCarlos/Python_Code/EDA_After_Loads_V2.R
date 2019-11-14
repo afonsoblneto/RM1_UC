@@ -5,8 +5,8 @@ expDB <- read.csv("D:/GitHub/RM1_UC/JoseCarlos/Python_Code/expDB.dat", header=FA
 expDB <- expDB[, -5]
 
 # Naming columns
-#colnames(expDB) <- c("Sort_Method", "Sample_Size", "Prob_Fail", "Size_Larg_Sort_Array", "Num_Shifts")
-colnames(expDB) <- c("Sort_Method", "Sample_Size", "Prob_Fail", "Size_Larg_Sort_Array")
+#colnames(expDB) <- c("Sort_Method", "Sequence_Size", "Prob_Fail", "Size_Larg_Sort_Array", "Num_Shifts")
+colnames(expDB) <- c("Sort_Method", "Sequence_Size", "Prob_Fail", "Size_Larg_Sort_Array")
 
 # Changing the col "Sort_Method" to categorical
 expDB[, 1] <- as.factor(expDB[, 1])
@@ -15,7 +15,7 @@ levels(expDB[, 1]) <- list_sort
 # Show level
 levels(expDB[, 1]) 
 
-# Changing the col "Sample_Size" from numerical to categorical
+# Changing the col "Sequence_Size" from numerical to categorical
 expDB[, 2] <- as.factor(expDB[, 2])
 list_n <- c("100","500","1000","2500","5000","7500","10000")
 levels(expDB[, 2]) <- list_n
@@ -41,15 +41,15 @@ str(expDB)
 
 #show_statistics <- function(expDB_summary, a_sort, a_n, a_exp) {
 show_statistics <- function(expDB_summary) {
-  # expDB_summary <- subset(expDB, (Sort_Method == a_sort) & (Sample_Size == a_n) & (Prob_Fail == a_exp) )
+  # expDB_summary <- subset(expDB, (Sort_Method == a_sort) & (Sequence_Size == a_n) & (Prob_Fail == a_exp) )
   print(summary(expDB_summary[, 4]))
   cat(paste("Standard Deviation = ", toString(round(sd(expDB_summary[, 4]), digits = 2)), sep = ""), "\n\n")
 }
 
 df_statistics <- data.frame("Sort_Method"=character(),
-                            "Sample_Size"=character(),
+                            "Sequence_Size"=character(),
                             "Prob_Fail"=character(),
-                            NumRows=integer(),
+                            SampleSize=integer(),
                             Mean=numeric(),
                             Min=numeric(),
                             Max=numeric(),
@@ -63,7 +63,7 @@ for(element_sort in list_sort){
   for(element_n in list_n){
     for(element_exp in list_exp){
       #cat(paste("Largert Array Size Statistics for ",element_sort," n = ", element_n, " and Prob_Fail = ", element_exp, sep = ""), "\n")
-      expDB_summary <- subset(expDB, (Sort_Method == element_sort) & (Sample_Size == element_n) & (Prob_Fail == element_exp) )
+      expDB_summary <- subset(expDB, (Sort_Method == element_sort) & (Sequence_Size == element_n) & (Prob_Fail == element_exp) )
       #show_statistics(expDB_summary)
       
       df_statistics[nrow(df_statistics)+1,] = list(element_sort,
@@ -74,7 +74,7 @@ for(element_sort in list_sort){
                                                    min(expDB_summary[, 4]),
                                                    max(expDB_summary[, 4]),
                                                    median(expDB_summary[, 4]),
-                                                   sd(expDB_summary[, 4])
+                                                   round(sd(expDB_summary[, 4]), digits = 2)
                                                    ) 
     }
   }
@@ -109,58 +109,58 @@ show_graph <- function(df2, field_filter, field_filter_value, field_x_axis, fiel
     theme_minimal()
 }
 
-#show_data("Prob_Fail", "1%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "2.5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "7.5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "10%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "12.5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-#show_data("Prob_Fail", "15%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
+#show_data("Prob_Fail", "1%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "2.5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "7.5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "10%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "12.5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+#show_data("Prob_Fail", "15%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
 
-#show_data("Prob_Fail", "1%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "2.5%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "5%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "7.5%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "10%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "12.5%", "Sort_Method","Num_Shifts","Sample_Size")
-#show_data("Prob_Fail", "15%", "Sort_Method","Num_Shifts","Sample_Size")
+#show_data("Prob_Fail", "1%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "2.5%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "5%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "7.5%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "10%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "12.5%", "Sort_Method","Num_Shifts","Sequence_Size")
+#show_data("Prob_Fail", "15%", "Sort_Method","Num_Shifts","Sequence_Size")
 
-show_data("Prob_Fail", "0.25%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "0.5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "0.75%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "1%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "1.25%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "1.5%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
-show_data("Prob_Fail", "1.75%", "Sort_Method","Size_Larg_Sort_Array","Sample_Size")
+show_data("Prob_Fail", "0.25%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "0.5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "0.75%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "1%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "1.25%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "1.5%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
+show_data("Prob_Fail", "1.75%", "Sort_Method","Size_Larg_Sort_Array","Sequence_Size")
 
-show_data("Prob_Fail", "0.25%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "0.5%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "0.75%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "1%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "1.25%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "1.5%", "Sort_Method","Num_Shifts","Sample_Size")
-show_data("Prob_Fail", "1.75%", "Sort_Method","Num_Shifts","Sample_Size")
+show_data("Prob_Fail", "0.25%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "0.5%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "0.75%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "1%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "1.25%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "1.5%", "Sort_Method","Num_Shifts","Sequence_Size")
+show_data("Prob_Fail", "1.75%", "Sort_Method","Num_Shifts","Sequence_Size")
 
 
-show_data("Sample_Size", 100, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 1000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 2500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 5000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 7500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
-show_data("Sample_Size", 10000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 100, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 1000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 2500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 5000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 7500, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
+show_data("Sequence_Size", 10000, "Sort_Method","Size_Larg_Sort_Array","Prob_Fail")
 
-show_data("Sample_Size", 100, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 500, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 1000, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 2500, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 5000, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 7500, "Sort_Method","Num_Shifts","Prob_Fail")
-show_data("Sample_Size", 10000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 100, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 500, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 1000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 2500, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 5000, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 7500, "Sort_Method","Num_Shifts","Prob_Fail")
+show_data("Sequence_Size", 10000, "Sort_Method","Num_Shifts","Prob_Fail")
 
 #### TO DO #####
 # # List simple summary statistics
-# summary(expDB[, 4], list(Sample_Size, Prob_Fail))
+# summary(expDB[, 4], list(Sequence_Size, Prob_Fail))
 # with(expDB, table(Sort_Method, Prob_Fail))
 # 
 # 
