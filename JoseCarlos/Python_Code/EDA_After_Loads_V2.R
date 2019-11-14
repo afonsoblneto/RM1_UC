@@ -39,23 +39,51 @@ names(expDB)
 # List the object structure (type and values of each column)
 str(expDB)
 
-show_statistics <- function(a_sort, a_n, a_exp) {
-  expDB_summary <- subset(expDB, (Sort_Method == a_sort) & (Sample_Size == a_n) & (Prob_Fail == a_exp) )
+#show_statistics <- function(expDB_summary, a_sort, a_n, a_exp) {
+show_statistics <- function(expDB_summary) {
+  # expDB_summary <- subset(expDB, (Sort_Method == a_sort) & (Sample_Size == a_n) & (Prob_Fail == a_exp) )
   print(summary(expDB_summary[, 4]))
   cat(paste("Standard Deviation = ", toString(round(sd(expDB_summary[, 4]), digits = 2)), sep = ""), "\n\n")
 }
 
-sink("D:/GitHub/RM1_UC/JoseCarlos/Python_Code/Statistics.txt", append=TRUE)
+df_statistics <- data.frame("Sort_Method"=character(),
+                            "Sample_Size"=character(),
+                            "Prob_Fail"=character(),
+                            NumRows=integer(),
+                            Mean=numeric(),
+                            Min=numeric(),
+                            Max=numeric(),
+                            Median=numeric(),
+                            StdDev=numeric(),
+                              stringsAsFactors=FALSE)
+df_statistics
+
 for(element_sort in list_sort){
-  cat("******* SORT METHOD: ", element_sort, "********" , "\n")
+  #cat("******* SORT METHOD: ", element_sort, "********" , "\n")
   for(element_n in list_n){
     for(element_exp in list_exp){
-      cat(paste("Largert Array Size Statistics for ",element_sort," n = ", element_n, " and Prob_Fail = ", element_exp, sep = ""), "\n")
-      show_statistics(element_sort, element_n, element_exp)
+      #cat(paste("Largert Array Size Statistics for ",element_sort," n = ", element_n, " and Prob_Fail = ", element_exp, sep = ""), "\n")
+      expDB_summary <- subset(expDB, (Sort_Method == element_sort) & (Sample_Size == element_n) & (Prob_Fail == element_exp) )
+      #show_statistics(expDB_summary)
+      
+      df_statistics[nrow(df_statistics)+1,] = list(element_sort,
+                                                   element_n, 
+                                                   element_exp,
+                                                   nrow(expDB_summary),
+                                                   mean(expDB_summary[, 4]),
+                                                   min(expDB_summary[, 4]),
+                                                   max(expDB_summary[, 4]),
+                                                   median(expDB_summary[, 4]),
+                                                   sd(expDB_summary[, 4])
+                                                   ) 
     }
   }
-  cat("****************************************" , "\n\n")
+  #cat("****************************************" , "\n\n")
 }
+
+options(max.print = 999999999)
+sink("D:/GitHub/RM1_UC/JoseCarlos/Python_Code/Statistics.txt", append=FALSE)
+print(df_statistics[,])
 sink()
 
 # Load ggplot2 library
