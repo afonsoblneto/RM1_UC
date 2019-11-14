@@ -1,0 +1,992 @@
+******* SORT METHOD:  Bubble_Sort ******** 
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  47.00   83.25   93.00   87.62   99.00  100.00 
+Standard Deviation = 14.82 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  53.00   80.50   87.00   84.52   93.00  100.00 
+Standard Deviation = 11.39 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  40.00   62.25   76.50   75.58   87.75  100.00 
+Standard Deviation = 18.14 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  33.00   66.25   92.00   82.66   99.75  100.00 
+Standard Deviation = 19.76 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  31.00   44.25   56.00   58.22   70.75   92.00 
+Standard Deviation = 15.44 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  33.00   41.25   55.50   57.66   70.75   97.00 
+Standard Deviation = 18.01 
+
+Largert Array Size Statistics for Bubble_Sort n = 100 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  28.00   45.00   56.00   57.40   68.75   97.00 
+Standard Deviation = 14.77 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  184.0   301.2   347.0   351.2   424.2   497.0 
+Standard Deviation = 84.34 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   94.0   173.2   227.0   234.1   298.8   359.0 
+Standard Deviation = 73.99 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   84.0   127.2   161.5   180.7   224.2   349.0 
+Standard Deviation = 69.94 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   88.0   131.0   169.0   174.9   217.0   332.0 
+Standard Deviation = 64.62 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   84.0   133.5   178.5   191.7   238.5   349.0 
+Standard Deviation = 73.33 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   69.0    96.0   131.5   139.6   168.2   293.0 
+Standard Deviation = 52.43 
+
+Largert Array Size Statistics for Bubble_Sort n = 500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   79.0   119.8   150.5   163.3   198.0   332.0 
+Standard Deviation = 58.2 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  215.0   291.2   390.0   418.7   489.0   914.0 
+Standard Deviation = 170.87 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  179.0   287.5   389.0   417.0   497.2   741.0 
+Standard Deviation = 155.05 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  169.0   225.0   285.0   315.8   375.8   660.0 
+Standard Deviation = 112.85 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  122.0   201.2   254.5   295.4   382.0   690.0 
+Standard Deviation = 125.99 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  135.0   207.8   276.5   284.9   328.8   630.0 
+Standard Deviation = 106.42 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  100.0   154.0   231.5   231.0   288.5   407.0 
+Standard Deviation = 85.83 
+
+Largert Array Size Statistics for Bubble_Sort n = 1000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   83.0   130.0   164.0   174.3   212.2   316.0 
+Standard Deviation = 56.49 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  484.0   741.5   975.0  1013.0  1267.0  1864.0 
+Standard Deviation = 345.84 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  276.0   425.5   497.5   556.0   643.2  1249.0 
+Standard Deviation = 192.02 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  215.0   371.2   483.0   492.1   574.5  1098.0 
+Standard Deviation = 160.97 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  201.0   318.5   392.0   430.6   523.5  1021.0 
+Standard Deviation = 150.81 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  134.0   259.2   295.5   327.8   375.0   627.0 
+Standard Deviation = 98.82 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  155.0   204.2   248.5   281.1   324.2   617.0 
+Standard Deviation = 114.37 
+
+Largert Array Size Statistics for Bubble_Sort n = 2500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   99.0   194.8   230.5   253.7   297.0   492.0 
+Standard Deviation = 84.34 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  558.0   810.0   983.0   999.6  1126.8  1914.0 
+Standard Deviation = 278.76 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  406.0   561.5   726.0   775.1   904.2  1527.0 
+Standard Deviation = 269.21 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  330.0   426.5   505.5   535.6   583.8  1058.0 
+Standard Deviation = 153.5 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  261.0   351.5   431.0   451.5   478.5  1100.0 
+Standard Deviation = 144.88 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  250.0   316.5   370.0   382.3   434.0   795.0 
+Standard Deviation = 98.75 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  212.0   296.0   324.5   351.6   395.0   612.0 
+Standard Deviation = 92.33 
+
+Largert Array Size Statistics for Bubble_Sort n = 5000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  168.0   222.2   284.0   308.7   379.8   675.0 
+Standard Deviation = 104.47 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    522    1108    1278    1382    1582    2696 
+Standard Deviation = 489.63 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  373.0   629.5   729.0   820.7   979.0  1343.0 
+Standard Deviation = 262.25 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  290.0   525.8   646.5   698.1   885.2  1237.0 
+Standard Deviation = 228.36 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  281.0   419.0   501.5   509.9   569.2   910.0 
+Standard Deviation = 139.15 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  244.0   336.0   396.0   402.4   454.8   704.0 
+Standard Deviation = 97.32 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  223.0   328.0   375.5   397.6   450.2   656.0 
+Standard Deviation = 102.86 
+
+Largert Array Size Statistics for Bubble_Sort n = 7500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  178.0   289.2   348.0   366.9   451.0   619.0 
+Standard Deviation = 112.16 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    751    1177    1437    1575    1886    2746 
+Standard Deviation = 536.07 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  483.0   938.5  1121.0  1200.7  1322.2  2568.0 
+Standard Deviation = 437.74 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  417.0   582.0   697.0   752.1   835.2  1554.0 
+Standard Deviation = 243.22 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  370.0   455.5   574.5   616.3   700.5  1188.0 
+Standard Deviation = 196.6 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  261.0   369.0   437.5   450.2   498.5   715.0 
+Standard Deviation = 109.41 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  240.0   333.2   365.0   381.5   406.8   703.0 
+Standard Deviation = 85.25 
+
+Largert Array Size Statistics for Bubble_Sort n = 10000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  233.0   333.0   397.0   419.4   464.5   826.0 
+Standard Deviation = 127.34 
+
+**************************************** 
+
+******* SORT METHOD:  Insertion_Sort ******** 
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.00   32.00   39.00   41.60   52.75   72.00 
+Standard Deviation = 12.99 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  17.00   22.25   27.00   28.84   32.75   55.00 
+Standard Deviation = 8.89 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  13.00   21.00   24.00   25.04   28.00   50.00 
+Standard Deviation = 6.56 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.00   17.00   20.00   20.58   23.75   33.00 
+Standard Deviation = 5.03 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.00   14.00   17.50   18.66   22.00   34.00 
+Standard Deviation = 5.18 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.00   15.25   17.00   17.76   20.00   27.00 
+Standard Deviation = 3.88 
+
+Largert Array Size Statistics for Insertion_Sort n = 100 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   9.00   13.00   15.00   15.32   17.00   24.00 
+Standard Deviation = 3.36 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   37.25   45.50   45.68   51.75   64.00 
+Standard Deviation = 9.42 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.00   29.00   33.00   34.26   39.00   54.00 
+Standard Deviation = 7.23 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   26.00   28.00   28.62   31.75   45.00 
+Standard Deviation = 4.87 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18.00   21.00   24.00   24.76   28.00   39.00 
+Standard Deviation = 5.01 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.00   21.00   23.00   23.92   27.00   35.00 
+Standard Deviation = 4.38 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  14.00   18.00   21.00   20.96   23.75   30.00 
+Standard Deviation = 3.63 
+
+Largert Array Size Statistics for Insertion_Sort n = 500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  14.00   17.25   19.50   19.82   22.00   29.00 
+Standard Deviation = 3.22 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  30.00   43.00   49.00   49.96   55.75   86.00 
+Standard Deviation = 11.06 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   31.25   35.50   36.16   40.00   51.00 
+Standard Deviation = 6.22 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  22.00   27.00   30.00   31.42   33.75   52.00 
+Standard Deviation = 6.43 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.00   24.25   27.00   27.94   30.00   38.00 
+Standard Deviation = 4.69 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  19.00   22.00   23.50   24.72   26.00   40.00 
+Standard Deviation = 4.58 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18.00   22.00   23.00   23.48   25.00   35.00 
+Standard Deviation = 3.22 
+
+Largert Array Size Statistics for Insertion_Sort n = 1000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.00   19.00   21.00   21.34   23.00   31.00 
+Standard Deviation = 3 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  41.00   47.25   54.50   54.52   60.75   79.00 
+Standard Deviation = 8.22 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  29.00   36.00   40.50   40.24   44.00   50.00 
+Standard Deviation = 5.78 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   31.00   33.00   34.26   37.00   53.00 
+Standard Deviation = 5.31 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   26.25   29.00   29.42   32.00   43.00 
+Standard Deviation = 4.31 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.00   26.00   28.00   28.44   30.75   41.00 
+Standard Deviation = 4.2 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   23.25   26.00   26.12   28.00   34.00 
+Standard Deviation = 3.43 
+
+Largert Array Size Statistics for Insertion_Sort n = 2500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  19.00   21.00   24.00   23.74   26.00   31.00 
+Standard Deviation = 2.72 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  44.00   53.00   60.00   59.00   64.75   77.00 
+Standard Deviation = 8.38 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  32.00   41.25   45.00   45.58   49.75   69.00 
+Standard Deviation = 6.61 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  29.00   35.00   38.00   38.46   40.75   50.00 
+Standard Deviation = 4.92 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   29.00   32.00   33.16   37.00   46.00 
+Standard Deviation = 4.74 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  22.00   27.25   30.00   30.22   32.00   42.00 
+Standard Deviation = 3.67 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  22.00   26.00   27.00   27.92   30.00   41.00 
+Standard Deviation = 3.46 
+
+Largert Array Size Statistics for Insertion_Sort n = 5000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   24.00   26.00   25.86   28.00   35.00 
+Standard Deviation = 3.43 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  43.00   55.25   62.00   61.68   67.00   82.00 
+Standard Deviation = 9.11 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   34.0    42.0    45.5    45.3    48.0    60.0 
+Standard Deviation = 5.09 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   32.0    35.0    37.0    37.7    40.0    49.0 
+Standard Deviation = 4.17 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   31.00   33.00   33.72   36.00   45.00 
+Standard Deviation = 4.11 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  24.00   28.00   31.00   31.36   34.00   43.00 
+Standard Deviation = 4.18 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   27.00   29.00   28.96   31.00   37.00 
+Standard Deviation = 3.28 
+
+Largert Array Size Statistics for Insertion_Sort n = 7500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  22.00   25.25   27.00   27.30   29.00   37.00 
+Standard Deviation = 3.05 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  50.00   57.25   62.00   62.76   67.25   84.00 
+Standard Deviation = 7.82 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  35.00   43.00   47.00   46.76   50.00   60.00 
+Standard Deviation = 5.66 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  32.00   35.00   38.00   38.54   40.00   52.00 
+Standard Deviation = 4.5 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   33.00   35.00   35.44   37.00   45.00 
+Standard Deviation = 3.87 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   29.00   31.00   31.26   33.00   38.00 
+Standard Deviation = 3.49 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  25.00   28.25   30.00   29.98   32.00   38.00 
+Standard Deviation = 3.2 
+
+Largert Array Size Statistics for Insertion_Sort n = 10000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   26.00   28.00   27.98   30.00   38.00 
+Standard Deviation = 3.01 
+
+**************************************** 
+
+******* SORT METHOD:  Merge_Sort ******** 
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  39.00   56.25   69.50   72.14   87.00  100.00 
+Standard Deviation = 20.21 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  30.00   45.25   54.50   58.14   65.75  100.00 
+Standard Deviation = 19.23 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  19.00   38.25   47.00   48.38   58.00   92.00 
+Standard Deviation = 15.59 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   33.25   39.00   42.96   50.75   83.00 
+Standard Deviation = 14.85 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   29.25   35.00   37.34   43.00   82.00 
+Standard Deviation = 12.21 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  14.00   22.25   30.00   31.08   38.00   71.00 
+Standard Deviation = 10.94 
+
+Largert Array Size Statistics for Merge_Sort n = 100 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  15.00   24.00   29.00   31.16   37.00   82.00 
+Standard Deviation = 10.76 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   59.0   105.0   136.5   146.6   168.5   310.0 
+Standard Deviation = 57.21 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   67.25   84.50   89.62  105.50  201.00 
+Standard Deviation = 30.55 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  38.00   59.25   70.00   72.42   82.00  120.00 
+Standard Deviation = 19.03 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  36.00   46.25   58.50   58.98   68.50  102.00 
+Standard Deviation = 14.03 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  29.00   41.00   47.00   48.54   55.00   80.00 
+Standard Deviation = 11.22 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   34.00   39.00   40.88   45.00   70.00 
+Standard Deviation = 9.86 
+
+Largert Array Size Statistics for Merge_Sort n = 500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.00   33.00   38.00   39.78   44.00   73.00 
+Standard Deviation = 10.3 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   84.0   134.2   167.0   174.5   202.8   400.0 
+Standard Deviation = 59.56 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   55.0    83.0   100.0   102.1   117.0   178.0 
+Standard Deviation = 26.27 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  44.00   60.25   72.00   74.56   80.50  135.00 
+Standard Deviation = 19.98 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  39.00   48.00   57.00   60.04   67.50  118.00 
+Standard Deviation = 15.88 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  31.00   43.00   50.50   51.00   57.75   78.00 
+Standard Deviation = 10.68 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   38.25   47.00   47.38   53.75   86.00 
+Standard Deviation = 11.28 
+
+Largert Array Size Statistics for Merge_Sort n = 1000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  29.00   34.00   38.00   40.76   45.75   89.00 
+Standard Deviation = 10.79 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  121.0   163.2   192.0   201.3   231.5   329.0 
+Standard Deviation = 47.89 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   77.0    96.0   109.0   115.8   135.5   192.0 
+Standard Deviation = 28.89 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  59.00   71.25   90.00   91.32  101.75  186.00 
+Standard Deviation = 25.36 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   55.00   62.50   69.66   77.00  146.00 
+Standard Deviation = 22.98 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  40.00   48.00   54.50   57.66   63.75  152.00 
+Standard Deviation = 17.36 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   32.0    41.0    48.0    48.2    55.0    82.0 
+Standard Deviation = 9.83 
+
+Largert Array Size Statistics for Merge_Sort n = 2500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  30.00   36.25   40.50   42.86   48.00   89.00 
+Standard Deviation = 10.25 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  141.0   176.2   203.5   215.7   250.0   391.0 
+Standard Deviation = 57.36 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   77.0   107.0   122.5   125.4   145.5   181.0 
+Standard Deviation = 25 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  57.00   75.00   87.00   88.22   97.75  181.00 
+Standard Deviation = 19.83 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   63.00   68.00   73.12   82.00  136.00 
+Standard Deviation = 15.84 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   40.0    51.0    56.5    57.5    64.5    81.0 
+Standard Deviation = 9.98 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  34.00   42.25   48.00   49.68   53.75   91.00 
+Standard Deviation = 10.89 
+
+Largert Array Size Statistics for Merge_Sort n = 5000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  32.00   38.25   41.00   43.10   48.75   62.00 
+Standard Deviation = 6.88 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  152.0   189.0   201.0   223.9   237.8   454.0 
+Standard Deviation = 58.88 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   85.0   106.5   121.0   129.6   141.8   237.0 
+Standard Deviation = 32.83 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  65.00   81.25   89.50   92.62  100.50  147.00 
+Standard Deviation = 18.22 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  49.00   62.25   69.00   70.46   78.75  103.00 
+Standard Deviation = 12.42 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  43.00   51.00   56.50   59.04   62.00  105.00 
+Standard Deviation = 11.6 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  38.00   43.00   47.00   49.24   54.25   73.00 
+Standard Deviation = 8.75 
+
+Largert Array Size Statistics for Merge_Sort n = 7500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  30.00   39.00   43.00   43.76   49.00   61.00 
+Standard Deviation = 6.74 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  145.0   195.2   233.5   236.0   272.2   410.0 
+Standard Deviation = 51.01 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   83.0   108.2   127.5   135.1   150.5   260.0 
+Standard Deviation = 36.33 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  57.00   80.25   92.00   95.60  102.00  215.00 
+Standard Deviation = 26.47 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  51.00   62.25   71.00   73.38   78.75  164.00 
+Standard Deviation = 18.08 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  44.00   54.00   60.00   61.04   66.75   87.00 
+Standard Deviation = 10.25 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   35.0    45.5    52.5    54.1    61.0    80.0 
+Standard Deviation = 11.09 
+
+Largert Array Size Statistics for Merge_Sort n = 10000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  31.00   40.00   43.00   44.36   46.00   71.00 
+Standard Deviation = 8.55 
+
+**************************************** 
+
+******* SORT METHOD:  Quick_Sort ******** 
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  29.00   48.75   71.50   70.26   90.75  100.00 
+Standard Deviation = 22.46 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   38.00   50.00   54.02   61.00  100.00 
+Standard Deviation = 20.72 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   30.00   37.50   42.98   54.75   92.00 
+Standard Deviation = 16.64 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  19.00   30.00   36.00   36.94   43.50   59.00 
+Standard Deviation = 9.91 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20.00   29.00   34.00   36.98   42.00   77.00 
+Standard Deviation = 12.14 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.00   25.00   30.00   30.54   34.00   57.00 
+Standard Deviation = 8.3 
+
+Largert Array Size Statistics for Quick_Sort n = 100 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  13.00   23.00   26.50   28.02   33.00   69.00 
+Standard Deviation = 9.35 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   65.0   102.5   117.5   125.4   140.8   239.0 
+Standard Deviation = 37.29 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  49.00   66.00   81.50   82.76   94.50  135.00 
+Standard Deviation = 21.14 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  42.00   55.00   62.50   65.52   73.50  120.00 
+Standard Deviation = 15.69 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  34.00   49.25   55.50   59.18   68.00  108.00 
+Standard Deviation = 15.68 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  30.00   38.25   47.00   48.42   55.75   85.00 
+Standard Deviation = 12.68 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   37.25   46.50   46.66   52.75   75.00 
+Standard Deviation = 11.53 
+
+Largert Array Size Statistics for Quick_Sort n = 500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  25.00   32.25   37.50   39.36   46.00   57.00 
+Standard Deviation = 8.97 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   88.0   123.2   138.0   147.5   164.0   265.0 
+Standard Deviation = 35.91 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   51.0    85.0    93.0   100.7   110.0   199.0 
+Standard Deviation = 25.95 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  50.00   67.00   73.00   79.00   90.75  131.00 
+Standard Deviation = 18.41 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  39.00   53.00   62.50   65.60   71.75  122.00 
+Standard Deviation = 18.04 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  37.00   47.75   57.00   56.74   63.75   88.00 
+Standard Deviation = 11.8 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  31.00   40.25   49.00   47.78   53.00   75.00 
+Standard Deviation = 9.63 
+
+Largert Array Size Statistics for Quick_Sort n = 1000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  32.00   38.00   43.50   45.24   53.00   68.00 
+Standard Deviation = 9.41 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  126.0   158.2   181.0   188.4   209.8   311.0 
+Standard Deviation = 39.6 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   81.0   108.0   124.0   126.1   144.0   201.0 
+Standard Deviation = 25.64 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   65.0    78.0    89.0    94.3   102.2   152.0 
+Standard Deviation = 21.66 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  52.00   63.00   71.00   72.64   78.75  109.00 
+Standard Deviation = 13.14 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  46.00   57.00   64.00   64.62   70.00  100.00 
+Standard Deviation = 10.74 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  43.00   51.25   57.50   58.30   62.50   85.00 
+Standard Deviation = 9.44 
+
+Largert Array Size Statistics for Quick_Sort n = 2500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   37.0    45.0    49.5    52.3    58.0    81.0 
+Standard Deviation = 10.58 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  151.0   192.5   221.5   221.3   242.0   372.0 
+Standard Deviation = 41.94 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   99.0   120.0   132.5   133.8   145.5   184.0 
+Standard Deviation = 21.52 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   81.0    92.5   103.5   106.3   114.5   220.0 
+Standard Deviation = 22.84 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  59.00   74.00   82.50   83.98   92.00  124.00 
+Standard Deviation = 12.35 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  52.00   63.00   69.00   70.12   76.00   94.00 
+Standard Deviation = 10.17 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   48.0    55.0    61.0    62.8    69.0    98.0 
+Standard Deviation = 11.34 
+
+Largert Array Size Statistics for Quick_Sort n = 5000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   51.00   56.00   59.32   65.75  110.00 
+Standard Deviation = 11.71 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  173.0   203.5   230.0   234.5   264.2   389.0 
+Standard Deviation = 45.36 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   91.0   121.0   134.0   140.1   158.2   218.0 
+Standard Deviation = 28.06 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  83.00   98.25  112.50  114.22  126.00  185.00 
+Standard Deviation = 20.56 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  63.00   76.25   88.00   88.44   99.75  132.00 
+Standard Deviation = 15.23 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  54.00   65.25   72.50   73.58   80.00  101.00 
+Standard Deviation = 11.48 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  52.00   60.25   64.00   67.56   72.75  112.00 
+Standard Deviation = 11.02 
+
+Largert Array Size Statistics for Quick_Sort n = 7500 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  47.00   54.00   60.00   60.04   64.00   78.00 
+Standard Deviation = 7.62 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 0.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  154.0   210.0   238.5   244.0   274.8   403.0 
+Standard Deviation = 48.15 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 0.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  109.0   128.5   146.0   147.9   161.8   208.0 
+Standard Deviation = 23.69 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 0.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   84.0   100.0   110.5   112.8   122.5   153.0 
+Standard Deviation = 17.48 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 1% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  74.00   82.25   89.50   91.10   98.00  130.00 
+Standard Deviation = 12.03 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 1.25% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  58.00   69.25   74.00   78.32   85.00  113.00 
+Standard Deviation = 13.58 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 1.5% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  51.00   61.00   65.50   68.06   72.75   96.00 
+Standard Deviation = 10.39 
+
+Largert Array Size Statistics for Quick_Sort n = 10000 and Prob_Fail = 1.75% 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  46.00   55.25   60.50   61.70   66.75   90.00 
+Standard Deviation = 9.4 
+
+**************************************** 
+
