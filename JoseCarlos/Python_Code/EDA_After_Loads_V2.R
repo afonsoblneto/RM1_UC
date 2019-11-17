@@ -16,6 +16,8 @@ levels(expDB[, 1]) <- list_sort
 levels(expDB[, 1]) 
 
 # Changing the col "Sequence_Size" from numerical to categorical
+Num_Sequence_Size <- expDB[, 2]
+expDB <- cbind(expDB, Num_Sequence_Size)
 expDB[, 2] <- as.factor(expDB[, 2])
 list_n <- c("100","500","1000","2500","5000","7500","10000")
 levels(expDB[, 2]) <- list_n
@@ -23,6 +25,8 @@ levels(expDB[, 2]) <- list_n
 levels(expDB[, 2]) 
 
 # Changing the col "Prob_Fail" from numerical to categorical
+Num_Prob_Fail <- expDB[, 3]
+expDB <- cbind(expDB, Num_Prob_Fail)
 expDB[, 3] <- as.factor(expDB[, 3])
 # Change the levels of the "Prob_Fail" based on categorical association
 list_exp <- c("0.25%","0.5%","0.75%","1%","1.25%","1.5%","1.75%")
@@ -38,6 +42,78 @@ print(expDB)
 names(expDB)
 # List the object structure (type and values of each column)
 str(expDB)
+
+####################### AGGREGATE ########################
+#s_aggr <- aggregate(expDB[, 4], list(expDB$Sort_Method, expDB$Sequence_Size, expDB$Prob_Fail), mean)
+#s_aggr <- aggregate(expDB[, 4], list(expDB$Sort_Method, expDB$Sequence_Size), mean)
+
+####################### Subsets ##########################
+#s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "100") & (Prob_Fail == "1.25%") )
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000")  )
+#s1 <- subset(expDB, (Sort_Method == "Bubble_Sort"))
+s1
+
+########################## HISTOGRAMS #################
+# Site with several examples os histograms
+#   https://www.datamentor.io/r-programming/histogram/
+
+h <- hist(s1$Size_Larg_Sort_Array)
+text(h$mids,h$counts,labels=h$counts, adj=c(0.5, -0.5))
+
+
+# Density estimation -> smoothing of the histogram
+truehist(s1$Size_Larg_Sort_Array, nbins = "FD", col = "grey", prob=TRUE, ylab="Density", main = "Density")
+lines(density(s1$Size_Larg_Sort_Array), lwd=2)
+lines(density(s1$Size_Larg_Sort_Array, adjust = 0.5), lwd=1)
+rug(s1$Size_Larg_Sort_Array)
+box()
+
+# Site with several examples barcharts with ggplot
+#   https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html
+# Load ggplot2 library
+library(ggplot2)
+ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+
+ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+
+## Small multiple graphs
+install.packages("viridisLite")
+# library
+library(ggplot2)
+library(viridis)
+library(hrbrthemes)
+
+# Graph
+ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity") +
+  scale_fill_viridis(discrete = T, option = "E") +
+  ggtitle("Sequence Size") +
+  facet_wrap(~Sequence_Size) +
+  theme_ipsum() +
+  theme(legend.position="none") +
+  xlab("")
+
+
+
+############### QQ Plot #################
+qqnorm(s1$Size_Larg_Sort_Array)
+qqline(s1$Size_Larg_Sort_Array)
+
+############## BoxPlot ###############
+boxplot(s1$Size_Larg_Sort_Array, notch = TRUE, col = "grey", ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array", boxwex = 0.5)
+
+boxplot(s1$Size_Larg_Sort_Array ~ s1$Prob_Fail, notch = TRUE, col = "grey",
+         ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array by Prob_Fail",
+         boxwex = 0.5, varwidth = TRUE)
+
+##############################
+
+
+
+
+
 
 #show_statistics <- function(expDB_summary, a_sort, a_n, a_exp) {
 show_statistics <- function(expDB_summary) {
