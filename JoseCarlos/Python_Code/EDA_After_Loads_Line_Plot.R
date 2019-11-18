@@ -65,8 +65,8 @@ for(element_sort in list_sort){
 ############## Line Charts  
 ##https://www.statmethods.net/graphs/line.html
 
-Orange <- subset(df_statistics, (Sort_Method == "Bubble_Sort"))
-s_title = "Bubble Sort"
+Orange <- subset(df_statistics, (Sort_Method == "Quick_Sort"))
+s_title = "Quick Sort"
 
 # Create Line Chart
 
@@ -90,7 +90,7 @@ colors <- rainbow(ntrees)
 linetype <- c(1:ntrees)
 plotchar <- seq(18,18+ntrees,1)
 
-Max# add lines
+# add lines
 for (i in 1:ntrees) {
   tree <- subset(Orange, (Prob_Fail==list_exp[i]))
   lines(tree$Num_Sequence_Size, tree$Mean, type="b", lwd=1.5,
