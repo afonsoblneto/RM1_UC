@@ -5,7 +5,6 @@ expDB <- read.csv("D:/GitHub/RM1_UC/JoseCarlos/Python_Code/expDB.dat", header=FA
 expDB <- expDB[, -5]
 
 # Naming columns
-#colnames(expDB) <- c("Sort_Method", "Sequence_Size", "Prob_Fail", "Size_Larg_Sort_Array", "Num_Shifts")
 colnames(expDB) <- c("Sort_Method", "Sequence_Size", "Prob_Fail", "Size_Larg_Sort_Array")
 
 # Changing the col "Sort_Method" to categorical
@@ -48,67 +47,222 @@ str(expDB)
 #s_aggr <- aggregate(expDB[, 4], list(expDB$Sort_Method, expDB$Sequence_Size), mean)
 
 ####################### Subsets ##########################
-#s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "100") & (Prob_Fail == "1.25%") )
-s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000")  )
+#s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000") & (Prob_Fail == "1.25%") )
+#s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000")  )
 #s1 <- subset(expDB, (Sort_Method == "Bubble_Sort"))
 s1
+
+
+######### Histograms #####
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000") & (Prob_Fail == "0.25%") )
+
+# Density estimation -> smoothing of the histogram
+library(MASS)
+
+rf <- function(s1_plot, arg_main){
+  truehist(s1_plot$Size_Larg_Sort_Array, nbins = "FD", col = "grey", prob=TRUE, ylab="Density", main = arg_main)
+  lines(density(s1_plot$Size_Larg_Sort_Array), lwd=2)
+  lines(density(s1_plot$Size_Larg_Sort_Array, adjust = 0.5), lwd=1)
+  rug(s1_plot$Size_Larg_Sort_Array)
+  box()
+}
+
+rf2 <- function(s1_plot){
+  qqnorm(s1_plot$Size_Larg_Sort_Array)
+  qqline(s1_plot$Size_Larg_Sort_Array)
+}
+
+### How to combine plots
+# https://www.statmethods.net/advgraphs/layout.html
+
+for(element_sort in list_sort[1]){
+  for(element_n in list_n[1:2]){
+    par(mfrow=c(2,2))
+    for(element_exp in list_exp[1:4]){
+      expDB_s1 <- subset(expDB, (Sort_Method == element_sort) & (Sequence_Size == element_n) & (Prob_Fail == element_exp) )
+      rf(expDB_s1, paste(element_sort, element_n, element_exp, sep=" / ") )
+      rf2(expDB_s1)
+      
+    }
+    par(mfrow=c(1,1))
+  }
+}
+
+
+################# How to save multiple plots in one page ######
+### http://rstudio-pubs-static.s3.amazonaws.com/2852_379274d7c5734f979e106dcf019ec46c.html
+##
+# Site with several examples barcharts with ggplot
+#   https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html
+# Load ggplot2 library
+
+##### Show Barplots of largest sort array considering probabilities of fail for each sequence size 
+library(grid)
+library(ggplot2)
+plots <- list()
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "100")  )
+plots[[1]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "500")  )
+plots[[2]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "1000")  )
+plots[[3]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "2500")  )
+plots[[4]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "5000")  )
+plots[[5]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "7500")  )
+plots[[6]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Sequence_Size == "10000")  )
+plots[[7]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(4, 2)))
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+print(plots[[1]], vp = vplayout(1, 1))  # key is to define vplayout
+print(plots[[2]], vp = vplayout(1, 2))
+print(plots[[3]], vp = vplayout(2, 1))  # key is to define vplayout
+print(plots[[4]], vp = vplayout(2, 2))
+print(plots[[5]], vp = vplayout(3, 1))  # key is to define vplayout
+print(plots[[6]], vp = vplayout(3, 2))
+print(plots[[7]], vp = vplayout(4, 1))  # key is to define vplayout
+
+
+#### All in one plot
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort"))
+ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+
+
+##### Show Barplots of largest sort array considering sequences sizes for each probability of fail  
+library(grid)
+library(ggplot2)
+plots <- list()
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "0.25%")  )
+plots[[1]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "0.5%")  )
+plots[[2]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "0.75%")  )
+plots[[3]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "1%")  )
+plots[[4]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "1.25%")  )
+plots[[5]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "1.5%")  )
+plots[[6]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort") & (Prob_Fail == "1.75%")  )
+plots[[7]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+
+
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(4, 2)))
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+print(plots[[1]], vp = vplayout(1, 1))  # key is to define vplayout
+print(plots[[2]], vp = vplayout(1, 2))
+print(plots[[3]], vp = vplayout(2, 1))  # key is to define vplayout
+print(plots[[4]], vp = vplayout(2, 2))
+print(plots[[5]], vp = vplayout(3, 1))  # key is to define vplayout
+print(plots[[6]], vp = vplayout(3, 2))
+print(plots[[7]], vp = vplayout(4, 1))  # key is to define vplayout
+
+#### All in one plot
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort"))
+ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+
+
+#### All in one plot in one page
+library(grid)
+library(ggplot2)
+plots <- list()
+s1 <- subset(expDB, (Sort_Method == "Bubble_Sort"))
+plots[[1]] <- ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
+  geom_bar(position="dodge", stat="identity")
+plots[[2]] <- ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+  geom_bar(position="dodge", stat="identity")
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(2, 1)))
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+print(plots[[1]], vp = vplayout(1, 1))  # key is to define vplayout
+print(plots[[2]], vp = vplayout(2, 1))
+
+####################
+
+
+
+
+
 
 ########################## HISTOGRAMS #################
 # Site with several examples os histograms
 #   https://www.datamentor.io/r-programming/histogram/
 
-h <- hist(s1$Size_Larg_Sort_Array)
-text(h$mids,h$counts,labels=h$counts, adj=c(0.5, -0.5))
+#h <- hist(s1$Size_Larg_Sort_Array)
+#text(h$mids,h$counts,labels=h$counts, adj=c(0.5, -0.5))
+####################
 
+
+############### QQ Plot #################
+# Link for a youtube video explaining how to interpret qq-plots
+##  https://www.youtube.com/watch?v=tdbLShf2bLk
+
+qqnorm(s1$Size_Larg_Sort_Array)
+qqline(s1$Size_Larg_Sort_Array)
+
+dev.print(pdf, "D:/GitHub/RM1_UC/JoseCarlos/Python_Code/Statistics.pdf")
+
+############## BoxPlot ###############
+boxplot(s1$Size_Larg_Sort_Array, notch = TRUE, col = "grey", ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array", boxwex = 0.5, outline = TRUE)
+
+
+boxplot(s1$Size_Larg_Sort_Array ~ s1$Prob_Fail, notch = TRUE, col = "grey",
+        ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array by Prob_Fail",
+        boxwex = 0.5, varwidth = TRUE)
+
+##############################
 
 # Density estimation -> smoothing of the histogram
+library(MASS)
 truehist(s1$Size_Larg_Sort_Array, nbins = "FD", col = "grey", prob=TRUE, ylab="Density", main = "Density")
 lines(density(s1$Size_Larg_Sort_Array), lwd=2)
 lines(density(s1$Size_Larg_Sort_Array, adjust = 0.5), lwd=1)
 rug(s1$Size_Larg_Sort_Array)
 box()
 
-# Site with several examples barcharts with ggplot
-#   https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html
-# Load ggplot2 library
-library(ggplot2)
-ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Sequence_Size)) + 
-  geom_bar(position="dodge", stat="identity")
 
-ggplot(s1, aes(fill=Sequence_Size, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
-  geom_bar(position="dodge", stat="identity")
 
 ## Small multiple graphs
-install.packages("viridisLite")
+#install.packages("viridisLite")
 # library
-library(ggplot2)
-library(viridis)
-library(hrbrthemes)
+#library(ggplot2)
+#library(viridis)
+#library(hrbrthemes)
 
 # Graph
-ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
-  geom_bar(position="dodge", stat="identity") +
-  scale_fill_viridis(discrete = T, option = "E") +
-  ggtitle("Sequence Size") +
-  facet_wrap(~Sequence_Size) +
-  theme_ipsum() +
-  theme(legend.position="none") +
-  xlab("")
+#ggplot(s1, aes(fill=Prob_Fail, y=Size_Larg_Sort_Array, x=Prob_Fail)) + 
+#  geom_bar(position="dodge", stat="identity") +
+#  scale_fill_viridis(discrete = T, option = "E") +
+#  ggtitle("Sequence Size") +
+#  facet_wrap(~Sequence_Size) +
+#  theme_ipsum() +
+#  theme(legend.position="none") +
+#  xlab("")
 
 
 
-############### QQ Plot #################
-qqnorm(s1$Size_Larg_Sort_Array)
-qqline(s1$Size_Larg_Sort_Array)
-
-############## BoxPlot ###############
-boxplot(s1$Size_Larg_Sort_Array, notch = TRUE, col = "grey", ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array", boxwex = 0.5)
-
-boxplot(s1$Size_Larg_Sort_Array ~ s1$Prob_Fail, notch = TRUE, col = "grey",
-         ylab = "Size_Larg_Sort_Array", main = "Boxplot of Size_Larg_Sort_Array by Prob_Fail",
-         boxwex = 0.5, varwidth = TRUE)
-
-##############################
 
 
 
