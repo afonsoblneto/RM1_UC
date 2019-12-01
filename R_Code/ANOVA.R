@@ -38,10 +38,10 @@ names(expDB)
 # Select subset for ANOVA analysis with 
 # Sequence_size = 5000, 7500, 10000
 # Prob_Fail = 0.25, 0.75, 1.25
-#a_sort="Bubble_Sort"
+a_sort="Bubble_Sort"
 #a_sort="Insertion_Sort"
 #a_sort="Merge_Sort"
-a_sort="Quick_Sort"
+#a_sort="Quick_Sort"
 expDB_s1 <- subset(expDB, (Sort_Method == a_sort) & +
                      ((Sequence_Size == "5000")  | +
                         (Sequence_Size == "7500") | +
@@ -56,6 +56,9 @@ expDB_s1[, 3] <- factor(expDB_s1[, 3])
 
 #
 #View(expDB_s1)
+
+# Disable scientific notation
+options(scipen=999)
 
 # EDA
 boxplot( Size_Larg_Sort_Array ~ Sequence_Size, data=expDB_s1)
@@ -83,4 +86,44 @@ bartlett.test(Size_Larg_Sort_Array~interaction(Sequence_Size,Prob_Fail), data=ex
 # Tukey HSD
 t = TukeyHSD(aov.out,alternative="two.sided")
 print(t)
+plot(t)
+
+Gastropods.ANOVA = aov.out
+TukeyHSD(Gastropods.ANOVA)
+tuk<-TukeyHSD(Gastropods.ANOVA)
+psig=as.numeric(apply(tuk$`Sequence_Size:Prob_Fail`[,2:3],1,prod)>=0)+1
+op=par(mar=c(4.2,9,3.8,2))
+plot(tuk,col=psig,yaxt="n")
+for (j in 1:length(psig)){
+  axis(2,at=j,labels=rownames(tuk$`Sequence_Size:Prob_Fail`)[length(psig)-j+1],
+       las=1,cex.axis=.8,col.axis=psig[length(psig)-j+1])
+}
+par(op)
+
+################### Non-parametric Two-Way ANOVA
+## Randomization test with unrestricted permutations
+D = expDB_s1
+aov.out = aov(Size_Larg_Sort_Array~Sequence_Size*Prob_Fail, data=D)
+FS = summary(aov.out)[[1]]$F[1]
+FP = summary(aov.out)[[1]]$F[2]
+FSP = summary(aov.out)[[1]]$F[3]
+pvalueS = 0 # p-value for Sequence_Size
+pvalueP = 0 # p-value for Prob_Fail
+pvalueSP = 0 # p-value for interaction
+for (i in 1:5000){
+  D$T = sample(D$Size_Larg_Sort_Array)
+  aov.out = aov(T~Sequence_Size*Prob_Fail, data=D)
+  pFS = summary(aov.out)[[1]]$F[1]
+  pFP = summary(aov.out)[[1]]$F[2]
+  pFSP = summary(aov.out)[[1]]$F[3]
+  if (pFS >= FS)
+    pvalueS = pvalueS + 1
+  if (pFP >= FP)
+    pvalueP = pvalueP + 1
+  if (pFSP >= FSP)
+    pvalueSP = pvalueSP + 1
+}
+print( paste("p-value for Sequence_Size:", pvalueS/5000 , sep = " "))
+print( paste("p-value for Prob_Fail:", pvalueP/5000 , sep = " "))
+print( paste("p-value for interaction:", pvalueSP/5000 , sep = " "))
 
