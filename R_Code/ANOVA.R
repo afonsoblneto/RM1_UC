@@ -86,7 +86,7 @@ bartlett.test(Size_Larg_Sort_Array~interaction(Sequence_Size,Prob_Fail), data=ex
 # Tukey HSD
 t = TukeyHSD(aov.out,alternative="two.sided")
 print(t)
-plot(t)
+#plot(t)
 
 Gastropods.ANOVA = aov.out
 TukeyHSD(Gastropods.ANOVA)
