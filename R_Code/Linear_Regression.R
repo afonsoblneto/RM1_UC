@@ -48,10 +48,10 @@ names(expDB)
 # Select subset for ANOVA analysis with 
 # Sequence_size = 5000, 7500, 10000
 # Prob_Fail = 0.25, 0.75, 1.25
-a_sort="Bubble_Sort"
+#a_sort="Bubble_Sort"
 #a_sort="Insertion_Sort"
 #a_sort="Merge_Sort"
-#a_sort="Quick_Sort"
+a_sort="Quick_Sort"
 #expDB_s1 <- subset(expDB, (Sort_Method == a_sort) & +
 #                     ((Num_Sequence_Size == 5000)  | +
 #                        (Num_Sequence_Size == 7500) | +
@@ -82,7 +82,7 @@ summary(lr.out)
 plot(expDB_s1$Size_Larg_Sort_Array ~ expDB_s1$Num_Prob_Fail)
 abline(lr.out)
 # Use plot function this way and navigate through some graphics (press enter)
-plot(lr.out)
+#plot(lr.out)
 
 
 # linear regression with transformation with Exponential model
@@ -93,7 +93,7 @@ plot(expDB_s1$numTransf ~ expDB_s1$Num_Prob_Fail)
 summary(lr.out)
 abline(lr.out)
 # Use plot function this way and navigate through some graphics (press enter)
-plot(lr.out)
+#plot(lr.out)
 
 
 # linear regression with transformation with Reciprocal model
@@ -104,7 +104,7 @@ plot(expDB_s1$numTransf~expDB_s1$Num_Prob_Fail)
 summary(lr.out)
 abline(lr.out)
 # Use plot function this way and navigate through some graphics (press enter)
-plot(lr.out)
+#plot(lr.out)
 
 # linear regression with transformation with Quadratic model
 numTransf <- sqrt(expDB_s1$Size_Larg_Sort_Array)
@@ -114,7 +114,7 @@ plot(expDB_s1$numTransf~expDB_s1$Num_Prob_Fail)
 summary(lr.out)
 abline(lr.out)
 # Use plot function this way and navigate through some graphics (press enter)
-plot(lr.out)
+#plot(lr.out)
 
 # linear regression with transformation with Logarithm model
 numTransf <- log(expDB_s1$Num_Prob_Fail)
@@ -124,5 +124,5 @@ plot(expDB_s1$Size_Larg_Sort_Array~numTransf)
 summary(lr.out)
 abline(lr.out)
 # Use plot function this way and navigate through some graphics (press enter)
-plot(lr.out)
+#plot(lr.out)
 

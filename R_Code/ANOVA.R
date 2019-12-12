@@ -75,7 +75,7 @@ aov.out = aov(Size_Larg_Sort_Array~Sequence_Size*Prob_Fail, data=expDB_s1)
 summary(aov.out)
 
 # Test normality of the residuals
-qqnorm(aov.out$res)
+qqnorm(aov.out$res, main=paste("Normal Q-Q Plot",a_sort, sep=" - "))
 qqline(aov.out$res)
 
 shapiro.test(aov.out$res)
@@ -85,17 +85,23 @@ bartlett.test(Size_Larg_Sort_Array~interaction(Sequence_Size,Prob_Fail), data=ex
 
 # Tukey HSD
 t = TukeyHSD(aov.out,alternative="two.sided")
+t$`Sequence_Size:Prob_Fail`[,4]
+#write.csv(data.frame(t$`Sequence_Size:Prob_Fail`[,4]), 'D:/GitHub/RM1_UC/R_Code/tukeyresults.csv')
+
 print(t)
-#plot(t)
+plot(t)
 
 Gastropods.ANOVA = aov.out
 TukeyHSD(Gastropods.ANOVA)
 tuk<-TukeyHSD(Gastropods.ANOVA)
+names(tuk)
 psig=as.numeric(apply(tuk$`Sequence_Size:Prob_Fail`[,2:3],1,prod)>=0)+1
-op=par(mar=c(4.2,9,3.8,2))
+#op=par(mar=c(4.2,9,3.8,2))
+op=par(mai=c(0.5,2.2,0.7,0.2))
 plot(tuk,col=psig,yaxt="n")
+title(a_sort, line = 1)
 for (j in 1:length(psig)){
-  axis(2,at=j,labels=rownames(tuk$`Sequence_Size:Prob_Fail`)[length(psig)-j+1],
+  axis(2,at=j,labels=paste(((length(psig)-j)+1), rownames(tuk$`Sequence_Size:Prob_Fail`),sep=" - ")[length(psig)-j+1],
        las=1,cex.axis=.8,col.axis=psig[length(psig)-j+1])
 }
 par(op)
