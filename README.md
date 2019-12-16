@@ -11,15 +11,20 @@ To perform this experiment, you should do the following:
 	1.4 - In the third cell you can change the value of the variable "number_of_samples" if you want an amount different of 50
 	1.5 - The python code will generate XX "number_of_samples" files called XX_data.in, where XX ranges from 1 to "number_of_samples"
 
-2 - Run sort algorithms
+2 - Run sorting algorithms
 
-	2.1 - Delete file expDB.dat
-	2.2 - After follow the whole step 1, you must double click on the following files in order to run each sort algoritm
-	2.3 - bubble.exe - for bubble sort
-	2.4 - insertion.exe - for insertion sort
-	2.5 - merge.exe - for merge sort
-	2.6 - quick.exe - for quick sort
-	2.7 - A new expDB.dat file will be generated containing the processing of the 4 sort methods
+	2.1 - Compile and the four sorting source codes, for instance in gcc: 
+		gcc bubblesortMod.c -o bubble, 
+		gcc insertionsortMod.c -o insertion, 				
+		gcc mergesortMod.c -o merge, and 
+		gcc quicksortMod.c -o quick
+	2.2 - Delete file expDB.dat
+	2.3 - After follow the whole step 1, you must run the sorting executables for each sorting algoritm
+	2.4 - bubble.exe - for bubble sort
+	2.5 - insertion.exe - for insertion sort
+	2.6 - merge.exe - for merge sort
+	2.7 - quick.exe - for quick sort
+	2.8 - A new expDB.dat file will be generated containing the output (sample data set) of the 4 sort methods
 	
 3 - Perform EDA
 
