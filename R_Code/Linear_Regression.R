@@ -52,13 +52,6 @@ names(expDB)
 #a_sort="Insertion_Sort"
 #a_sort="Merge_Sort"
 a_sort="Quick_Sort"
-#expDB_s1 <- subset(expDB, (Sort_Method == a_sort) & +
-#                     ((Num_Sequence_Size == 5000)  | +
-#                        (Num_Sequence_Size == 7500) | +
-#                        (Num_Sequence_Size == 10000)) & + 
-#                      ((Num_Prob_Fail == 0.0025) | +
-#                        (Num_Prob_Fail == 0.0075) | +
-#                        (Num_Prob_Fail == 0.0125)) )
 
 expDB_s1 <- subset(expDB, (Sort_Method == a_sort) & +
                         (Num_Sequence_Size == 10000) & + 
